@@ -51,9 +51,21 @@ class ViewController: UIViewController {
             result.text = String(fact(input[0]))
             refresh()
         } else if button == "=" { // try to calculate
-            if(op == "" || current == "") {
+            if(op == "") {
                 return
-            }
+            } else if (current == "") {
+                if op == "Count" {
+                    lastAnswer = Double(input.count)
+                    result.text = String(lastAnswer)
+                    refresh()
+                    input = []
+                } else if op == "Avg" {
+                    lastAnswer = average(input)
+                    result.text = String(lastAnswer)
+                    refresh()
+                    input = []
+                }
+            } else {
             input.append(Double(current)!)
             if input.count == 2 {
             let a = input[0]
@@ -70,18 +82,10 @@ class ViewController: UIViewController {
             case "%":
                 lastAnswer = a.truncatingRemainder(dividingBy: b)
             default:
-                return
+                break
             }
                 result.text = String(lastAnswer)
             }
-            
-            if button == "Count" {
-                lastAnswer = Double(input.count)
-                result.text = String(lastAnswer)
-            } else if button == "Avg" {
-                lastAnswer = average(input)
-                result.text = String(lastAnswer)
-
             }
             refresh()
             input = []
