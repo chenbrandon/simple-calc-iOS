@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="135.38230884557723"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="PxM-UI-3oz">
             <objects>
-                <viewController id="AXX-hB-OsB" sceneMemberID="viewController">
+                <viewController id="AXX-hB-OsB" customClass="HistoryViewController" customModule="simple_calc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6CT-Ue-O1f"/>
                         <viewControllerLayoutGuide type="bottom" id="GCl-xj-Aby"/>
@@ -333,6 +333,9 @@
                             <constraint firstItem="18m-ss-XCZ" firstAttribute="centerX" secondItem="gom-ps-sTa" secondAttribute="centerX" id="w1y-Zc-T9z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="list" destination="18m-ss-XCZ" id="cg0-N9-Jd8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbB-Tp-q1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
