@@ -13,7 +13,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         list.contentSize = CGSize(width: list.frame.width, height: CGFloat(data.count*25))
-        for i in 0...data.count-1 {
+        for i in 0..<data.count {
             let item = UILabel(frame: CGRect(x: 0,y: i * 25 ,width: Int(list.bounds.size.width),height: 30))
             item.textAlignment = NSTextAlignment.right
             item.text = data[i]
