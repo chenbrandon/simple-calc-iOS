@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBOutlet weak var result: UILabel!
-    
+    var history: [String] = ["dummy data", "dummy data 2", "dummy data 3", "dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data", "dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data", "dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","dummy data","This is the last one in the list"]
     var lastAnswer: Double = 0
     var input: [Double] = []
     var current = ""
@@ -33,6 +33,11 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyViewController = segue.destination as! HistoryViewController
+        historyViewController.data = history
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {

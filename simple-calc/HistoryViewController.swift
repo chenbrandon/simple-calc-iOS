@@ -12,6 +12,13 @@ class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        list.contentSize = CGSize(width: list.frame.width, height: CGFloat(data.count*25))
+        for i in 0...data.count-1 {
+            let item = UILabel(frame: CGRect(x: 0,y: i * 25 ,width: Int(list.bounds.size.width),height: 30))
+            item.textAlignment = NSTextAlignment.right
+            item.text = data[i]
+            list.addSubview(item)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -25,6 +32,10 @@ class HistoryViewController: UIViewController {
     
     var data: [String] = []
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! ViewController
+        viewController.history = data
+    }
 
     /*
     // MARK: - Navigation
